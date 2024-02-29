@@ -9,7 +9,7 @@ class Block(pg.sprite.Sprite):
 
         super().__init__(tetromino.tetris.sprite_group)
         self.image = pg.Surface([TILE_SIZE, TILE_SIZE])
-        pg.draw.rect(self.image, 'dark green', (1, 1, TILE_SIZE - 2, TILE_SIZE - 2), border_radius = 8)
+        pg.draw.rect(self.image, 'blue', (1, 1, TILE_SIZE - 2, TILE_SIZE - 2), border_radius = 8)
         self.rect = self.image.get_rect()
 
     def is_alive(self):
