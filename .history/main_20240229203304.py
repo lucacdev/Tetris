@@ -17,7 +17,7 @@ class App:
         self.anim_trigger = False
         self.fast_anim_trigger = False
         pg.time.set_timer(self.user_event, ANIM_TIME_INTERVAL)
-        pg.time.set_timer(self.fast_user_event, FAST_ANIM_TIME_INTERVAL)
+        pg.time.set_timer(self.fats_user_event, FAST_ANIM_TIME_INTERVAL)
 
     def update(self):
         self.tetris.update()
