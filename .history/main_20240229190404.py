@@ -26,15 +26,12 @@ class App:
         pg.display.flip()
 
     def check_events(self):
-        self.anim_trigger = False
         for event in pg.event.get():
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 pg.quit()
                 sys.exit()
             elif event.type == pg.KEYDOWN:
                 self.tetris.control(pressed_key=event.key)
-            elif event.type == self.user_event:
-                self.anim_trigger = True
 
     def run(self):
         while True:

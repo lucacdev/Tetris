@@ -12,7 +12,7 @@ class Tetris:
     def put_blocks_in_array(self):
         for block in self.tetromino.blocks:
             x, y = int(block.pos.x), int(block.pos.y)
-            self.field_array[y][x] = block
+            self.field_array[x][y] = block
 
     def get_field_array(self):
         return [[0 for x in range(FIELD_W)] for y in range(FIELD_H)]
