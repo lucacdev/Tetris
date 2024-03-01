@@ -5,7 +5,7 @@ vec = pg.math.Vector2
 FPS = 60
 FIELD_COLOUR = (48, 39, 32)
 
-# SPRITE_DIR_PATH = 'assets/sprites'
+SPRITE_DIR_PATH = 'assets/sprites'
 
 ANIM_TIME_INTERVAL = 150 # ms
 FAST_ANIM_TIME_INTERVAL = 15 # ms
@@ -28,11 +28,11 @@ TETROMINOES = {
 }
 
 TETROMINOES_COLOURS = {
-    'O' : (205, 205, 0),
-    'I' : (0, 205, 205),
-    'S' : (0, 205, 0),
-    'Z' : (205, 0, 0),
-    'L' : (205, 102, 0),
-    'J' : (0, 0, 205),
-    'T' : (154, 0, 205)
+    'O' : (255, 255, 0),
+    'I' : (0, 255, 255),
+    'S' : (0, 255, 0),
+    'Z' : (255, 0, 255),
+    'L' : (255, 165, 0),
+    'J' : (0, 0, 255),
+    'T' : (255, 0, 0)
 }

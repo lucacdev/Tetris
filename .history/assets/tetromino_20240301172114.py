@@ -1,6 +1,5 @@
 from settings import *
 import random
-from threading import Timer
 
 class Block(pg.sprite.Sprite):
     def __init__(self, tetromino, pos):
@@ -60,7 +59,7 @@ class Tetromino:
         move_direction = MOVE_DIRECTIONS[direction]
         new_block_positions = [block.pos + move_direction for block in self.blocks]
         is_collide = self.is_collide(new_block_positions)
-        
+
         if not is_collide:
             for block in self.blocks:
                 block.pos += move_direction

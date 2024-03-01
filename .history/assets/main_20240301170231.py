@@ -10,7 +10,7 @@ class App:
         self.screen = pg.display.set_mode(FIELD_RES)
         self.clock = pg.time.Clock()
         self.set_timer()
-        # self.images = self.load_images()
+        self.images = self.load_images()
         self.tetris = Tetris(self)
 
     """ def load_images(self):

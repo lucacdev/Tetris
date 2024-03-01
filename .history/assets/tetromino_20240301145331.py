@@ -1,6 +1,5 @@
 from settings import *
 import random
-from threading import Timer
 
 class Block(pg.sprite.Sprite):
     def __init__(self, tetromino, pos):
@@ -9,9 +8,9 @@ class Block(pg.sprite.Sprite):
         self.alive = True
 
         super().__init__(tetromino.tetris.sprite_group)
-        # self.image = tetromino.image
-        self.image = pg.Surface([TILE_SIZE, TILE_SIZE])
-        pg.draw.rect(self.image, tetromino.image, (1, 1, TILE_SIZE - 2, TILE_SIZE - 2), border_top_left_radius = 10)
+        self.image = tetromino.image
+        # self.image = pg.Surface([TILE_SIZE, TILE_SIZE])
+        # pg.draw.rect(self.image, 'dark green', (1, 1, TILE_SIZE - 2, TILE_SIZE - 2), border_radius = 8)
         self.rect = self.image.get_rect()
 
     def is_alive(self):
@@ -40,8 +39,7 @@ class Tetromino:
     def __init__(self, tetris):
         self.tetris = tetris
         self.shape = random.choice(list(TETROMINOES.keys()))
-        # self.image = random.choice(tetris.app.images)
-        self.image = TETROMINOES_COLOURS[self.shape]
+        self.image = random.choice(tetris.app.images)
         self.blocks = [Block(self, pos) for pos in TETROMINOES[self.shape]]
         self.landing = False
 
@@ -60,7 +58,7 @@ class Tetromino:
         move_direction = MOVE_DIRECTIONS[direction]
         new_block_positions = [block.pos + move_direction for block in self.blocks]
         is_collide = self.is_collide(new_block_positions)
-        
+
         if not is_collide:
             for block in self.blocks:
                 block.pos += move_direction

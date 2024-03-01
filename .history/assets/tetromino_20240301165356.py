@@ -1,6 +1,5 @@
 from settings import *
 import random
-from threading import Timer
 
 class Block(pg.sprite.Sprite):
     def __init__(self, tetromino, pos):
@@ -11,7 +10,7 @@ class Block(pg.sprite.Sprite):
         super().__init__(tetromino.tetris.sprite_group)
         # self.image = tetromino.image
         self.image = pg.Surface([TILE_SIZE, TILE_SIZE])
-        pg.draw.rect(self.image, tetromino.image, (1, 1, TILE_SIZE - 2, TILE_SIZE - 2), border_top_left_radius = 10)
+        pg.draw.rect(self.image, tetromino.image, (1, 1, TILE_SIZE - 2, TILE_SIZE - 2), border_top_left_radius = 3)
         self.rect = self.image.get_rect()
 
     def is_alive(self):
@@ -60,7 +59,7 @@ class Tetromino:
         move_direction = MOVE_DIRECTIONS[direction]
         new_block_positions = [block.pos + move_direction for block in self.blocks]
         is_collide = self.is_collide(new_block_positions)
-        
+
         if not is_collide:
             for block in self.blocks:
                 block.pos += move_direction

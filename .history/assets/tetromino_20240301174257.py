@@ -61,11 +61,15 @@ class Tetromino:
         new_block_positions = [block.pos + move_direction for block in self.blocks]
         is_collide = self.is_collide(new_block_positions)
         
+        def delay():
+            self.landing = True
+        
         if not is_collide:
             for block in self.blocks:
                 block.pos += move_direction
         elif direction == 'down':
-            self.landing = True
+            Timer(5, delay())
+            # self.landing = True
 
     def update(self):
         self.move(direction='down')
