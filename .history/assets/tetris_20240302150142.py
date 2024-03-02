@@ -9,10 +9,10 @@ class Text:
         self.font = ft.Font(FONT_PATH)
 
     def draw(self):
-        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.02), text='TETRIS', fgcolor='white', size=TILE_SIZE * 3)
-        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.22), text='Next', fgcolor='white', size=TILE_SIZE * 3)
-        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.67), text='Score', fgcolor='white', size=TILE_SIZE * 3)
-        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.8), text=f'{self.app.tetris.score}', fgcolor='white', size=TILE_SIZE * 3)
+        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.02), text='TETRIS', fgcolor='white', size=TILE_SIZE * 3, bgcolor='dark green')
+        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.22), text='Next', fgcolor='white', size=TILE_SIZE * 3, bgcolor='dark green')
+        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.67), text='Score', fgcolor='white', size=TILE_SIZE * 3, bgcolor='dark green')
+        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.8), text=f'{self.app.tetris.score}', fgcolor='white', size=TILE_SIZE * 3, bgcolor='dark green')
 class Tetris:
     def __init__(self, app):
         self.app = app

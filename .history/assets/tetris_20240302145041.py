@@ -9,10 +9,10 @@ class Text:
         self.font = ft.Font(FONT_PATH)
 
     def draw(self):
-        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.02), text='TETRIS', fgcolor='white', size=TILE_SIZE * 3)
-        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.22), text='Next', fgcolor='white', size=TILE_SIZE * 3)
-        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.67), text='Score', fgcolor='white', size=TILE_SIZE * 3)
-        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.8), text=f'{self.app.tetris.score}', fgcolor='white', size=TILE_SIZE * 3)
+        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.02), text='TETRIS', fgcolor='white', size=TILE_SIZE * 3, bgcolor='dark green')
+        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.02), text='TETRIS', fgcolor='white', size=TILE_SIZE * 3, bgcolor='black')
+        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.02), text='TETRIS', fgcolor='white', size=TILE_SIZE * 3, bgcolor='black')
+        self.font.render_to(self.app.screen, (WIN_W * 0.63, WIN_H * 0.02), text='TETRIS', fgcolor='white', size=TILE_SIZE * 3, bgcolor='black')
 class Tetris:
     def __init__(self, app):
         self.app = app
@@ -21,14 +21,6 @@ class Tetris:
         self.tetromino = Tetromino(self)
         self.next_tetromino = Tetromino(self, current=False)
         self.speed_up = False
-
-        self.score = 0
-        self.full_lines = 0
-        self.points_per_lines = {0: 0, 1: 100, 2: 300, 3:700, 4: 1500}
-
-    def get_score(self):
-        self.score += self.points_per_lines[self.full_lines]
-        self.full_lines = 0
 
     def check_full_lines(self):
         row = FIELD_H - 1
@@ -45,8 +37,6 @@ class Tetris:
                 for x in range(FIELD_W):
                     self.field_array[row][x].alive = False
                     self.field_array[row][x] = 0
-
-                self.full_lines += 1
 
     def put_blocks_in_array(self):
         for block in self.tetromino.blocks:
@@ -94,7 +84,6 @@ class Tetris:
             self.check_full_lines()
             self.tetromino.update()
             self.check_landing()
-            self.get_score()
         self.sprite_group.update()
 
     def draw(self):
