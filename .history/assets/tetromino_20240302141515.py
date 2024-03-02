@@ -26,7 +26,7 @@ class Block(pg.sprite.Sprite):
         
     def set_rect_pos(self):
         pos = [self.next_pos, self.pos][self.tetromino.current]
-        self.rect.topleft = pos * TILE_SIZE
+        self.rect.topleft = self.pos * TILE_SIZE
 
     def update(self):
         self.is_alive()

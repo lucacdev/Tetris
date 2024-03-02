@@ -33,7 +33,6 @@ class App:
 
     def draw(self):
         self.screen.fill(color=BG_COLOUR)
-        self.screen.fill(color=FIELD_COLOUR, rect=(0, 0, *FIELD_RES))
         self.tetris.draw()
         pg.display.flip()
 

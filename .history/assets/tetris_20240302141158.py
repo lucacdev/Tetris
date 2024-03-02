@@ -39,9 +39,7 @@ class Tetris:
         if self.tetromino.landing:
             self.speed_up = False
             self.put_blocks_in_array()
-            self.next_tetromino.current = True
-            self.tetromino = self.next_tetromino
-            self.next_tetromino = Tetromino(self, current=False)
+            self.tetromino = Tetromino(self)
 
     def control(self, pressed_key):
         if pressed_key == pg.K_LEFT:

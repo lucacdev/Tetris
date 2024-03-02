@@ -3,8 +3,8 @@ import pygame as pg
 vec = pg.math.Vector2
 
 FPS = 60
-FIELD_COLOUR = (114, 161, 55)
-BG_COLOUR = (37, 72, 50)
+FIELD_COLOUR = (48, 39, 32)
+BG_COLOUR = (32, 32, 32)
 
 # SPRITE_DIR_PATH = 'assets/sprites'
 
@@ -19,7 +19,6 @@ FIELD_SCALE_W, FIELD_SCALE_H = 1.7, 1.0
 WIN_RES = WIN_W, WIN_H = FIELD_RES[0] * FIELD_SCALE_W, FIELD_RES[1] * FIELD_SCALE_H
 
 INIT_POS_OFFSET = vec(FIELD_W // 2 - 1, 0)
-NEXT_POS_OFFSET = vec(FIELD_W * 1.3, FIELD_H * 0.45)
 MOVE_DIRECTIONS = {'left': vec(-1, 0), 'right': vec(1, 0), 'down': vec(0, 1)}
 
 TETROMINOES = {
